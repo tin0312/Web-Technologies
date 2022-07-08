@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>
+            HTML Forms
+        </title>
+    </head>
+    <body>
+        <ol>
+<li>Below is checkbox input type </li>
+<!--Check Box Type-->
+<!--Group of checkboxes with the same topic have the same name attribute-->
+<input type = 'checkbox' name = 'breakfast' value = 'bacon'>Bacon<br>
+<input type= 'checkbox' name = ' breakfast' value = 'eggs'>Eggs<br>
+<input type= 'checkbox' name = 'breakfast' value ='pancakes'>Pancakes<br>
+<!--TextArea aka comment Section-->
+<!---rows and cols attributes determine the initial height and width,
+-textarea can be stretched/shrunk
+textarea is not self-closing tag
+the value is the content between opening and closing tag-->
+<li>Feel free to leave your comment down below</li>
+<textarea rows = '10' cols = '30' name = 'comment'></textarea>
+<!--Form can contain various input, when a user submit a form, info from input will be passed to the source in the attribute action of the form-->
+<!--Action attribute tells the form where to send info to; method tells the form what to do with the form once the info is sent-->
+<li>We have from element to collect & send information to an external source</li>
+<form method = 'post' action = '' target = '_blank'>
+    Enter your name:
+    <input type = 'text' name = 'fname'>
+    <br/>
+    Enter your age:
+    <input type = 'text' name = 'age'>
+    <br/>
+    <input type ='submit' value ='Submit'>
+</form>
+<!--Input type number-->
+<li>Use the arrows to pick your favourite number</li>
+<input type = 'number' name = 'balance' max = '10'/>
+<li>Write something interesting</li>
+<input type = 'text' name ='something' maxlength = '31' minLength = '4'>
+<!--Input Element-->
+<!--Label has for attribute to match with input id-->
+<li>Text Input Field & Checkbox Input Field</li>
+<form method = 'post' action =''>
+<label for='fname'>First Name:</label>
+<input type = 'text' name = 'fname' id = 'fname' required pattern= '[a-z]{4,8}' title ='The username should be all lowercase and from 4-8 characters' placeholder='Your Name' autocomplete="on"><br>
+<lable for= 'password'>Password:</lable>
+<input type = 'text' id= 'password' name = 'password'required> <br>
+<input type = 'submit' name = 'submit_button' value = 'Send'/>
+</form>
+<input type = 'checkbox' name = 'vehicle' value = 'Bike' > I own a bike!
+<!--Input Range Type-->
+<li>Select your range</li>
+<input type = 'range' name = 'movie-rating' min = '0' max = '10' step = '0.1'/>
+<!--Dropdown List with Options elements-->
+<!--The name and value are sent as key-value pair when the form is submitted-->
+<li>Dropdown list</li>
+<select name = 'rental-option'>
+    <option value = 'small'>Small</option>
+    <option value = 'family'>Family</option>
+    <option value = 'lux'>Lux</option>
+</select>
+<!--DataList: Users can pick from pre-defined options or alter by their own -->
+<li>We have a list of Data as followings:</li>
+<input list = 'ide'>
+<datalist id = 'ide'>
+    <option value = 'Visual Studio Code' />
+    <option value = 'Atom' />
+    <option value = 'Subline Text'/>
+</datalist>
+<!--Radio Input Type-->
+<li>Here is the radio buttons</li>
+<input name="delivery_option" type="radio" value="pickup" />
+<input name="delivery_option" type="radio" value="delivery" />
+<!--Submit Input-->
+<li>Submit Button</li>
+<input type = 'submit' name ='submit_Button' value = 'Submit'>
+</ol>
+<script>
+    const validation = new JustValidate('#form');/*Passed form selector as paramater of new variable validation*/
+
+validation /*Using declared variable to call addField with the first argument*/
+  .addField('#name', [ // .addField syntax : .addField('#typename',[{rule:'validated attribute'}])
+    {
+      rule: 'minLength',
+      value: 3,
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Email is required',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Email is invalid!',
+    },
+  ]);
+</script>
+    </body>
+</html>
+<!--Name attribute must be specified for the form the submit information, id and name are not the same-->
+
+<!--There is another way to validate the client-side without using directly attributes in html tags
+Using JustValidate in javascript will mnake it quicker for validation
+-->
+
+<!--A button with Seach Word-->
+<button type='submit' >Search</button>
+

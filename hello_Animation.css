@@ -1,0 +1,131 @@
+.hello {
+    margin: 100 75;
+    font-family: 'calibri';
+    font-weight: bold;
+    font-size: 48px;
+    color: black;
+    animation: rightLeft 1s;
+    text-align: center;
+    
+  }
+.goodbye{ margin: 100 75;
+    font-family: 'calibri';
+    font-weight: bold;
+    font-size: 48px;
+    color: black;
+    animation: upDown 1s;
+    text-align: center;
+ }
+  .x-axis {
+    /* add animation 2s to x-axis*/
+    animation: rightLeft 2s;
+  }
+  
+  .y-axis {
+    /* add animation 1s to y-axis */
+    animation: upDown 2s;
+  }
+  
+  @keyframes rightLeft {
+    /* Add stages below */
+    30% {
+      transform: translate(50px, 0px);/*Move an element to the right of its initial position by 50px*/
+    }
+    70% {
+      transform: translate(-50px, 0px);/*Move an element to the left of its initial position by 50px*/
+    }
+  }
+  @keyframes upDown {
+    30% {
+      transform: translate(0px, -25px);
+    }
+    70% {
+      transform: translate(0px, 25px);
+    }
+  }
+  
+  body {
+    background-color: #FFE6FF;
+    overflow: hidden;
+  }
+  .square1 {
+    background-color: #F7CED7FF;
+    animation: downThenUp 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+  }
+  
+  .square2 {
+    background-color: #F99FC9FF;
+    animation: downThenUp 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+  }
+  
+  .square3 {
+    background-color: #EF6079FF;
+    animation: downThenUp 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+  }
+  
+  @keyframes downThenUp{
+    0% {
+      transform: translate(0px, 200px);
+    }
+    50% {
+      transform: translate(0px, 400px) rotate(45deg);
+    }
+    100% {
+      transform: translate(0px, 200px);
+    }
+  }
+  
+  .square {
+    text-align: left;
+    margin: 10px 10px;
+    width: 50px;
+    height: 50px;
+  }
+  .word1 {
+    color: #963CBDFF;
+    height: 1000px;
+    animation: textRotate 8s 5s alternate;
+  }
+  
+  .word2 {
+    color: #FF6F61FF;
+    height: 1000px;
+    animation: textRotate 8s 2s reverse;
+  }
+  
+  .word3 {
+    color: #C5299BFF;
+    height: 1000px;
+    animation: textRotate 8s 1s alternate-reverse;
+  }
+  
+  @keyframes textRotate{
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  .word {
+    width: 400;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24;
+    bottom: 0;
+    transform-origin: bottom;
+    transform: rotate(180deg);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  p{
+    font-size: 50px;
+  }
